@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>Nexus_Gather</defName>
+    <driverClass>tsmod.JobDriver_NexusGather</driverClass>
+    <reportString>正在开采资源。</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <suspendable>true</suspendable>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+  </JobDef>
+
+  <JobDef>
+    <defName>Nexus_Deposit</defName>
+    <driverClass>tsmod.JobDriver_NexusDeposit</driverClass>
+    <reportString>正在上交资源。</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <suspendable>true</suspendable>
+  </JobDef>
+
+
+<JobDef>
+    <defName>Nexus_Kidnap</defName>
+    <driverClass>tsmod.JobDriver_NexusKidnap</driverClass>
+    <reportString>kidnapping TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+<JobDef>
+    <defName>Nexus_Foreclose</defName>
+    <driverClass>tsmod.JobDriver_NexusForeclose</driverClass>
+    <reportString>seizing TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+<DutyDef>
+    <defName>Nexus_ResourceDuty</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="tsmod.JobGiver_NexusWork" />
+        
+        <li Class="JobGiver_WanderNearDutyLocation">
+          <wanderRadius>10</wanderRadius>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Nexus_Executioner_MeteorP</defName>
+    <label>crashing shuttle</label>
+    <thingClass>tsmod.Projectile_SlidingShuttle</thingClass>
+    <rotatable>false</rotatable>
+    <graphicData>
+      <texPath>tsmod/Executioner_west</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <projectile>
+      <damageAmountBase>50</damageAmountBase>
+      <speed>0</speed> 
+      <damageDef>Blunt</damageDef>
+      <flyOverhead>false</flyOverhead>
+    </projectile>
+    <modExtensions>
+      <li Class="tsmod.ShuttleModExtension">
+        <textureRotationOffset>-90</textureRotationOffset>
+        <slideSpeed>10</slideSpeed>        
+        <collisionRadius>0.5</collisionRadius> 
+        <friction>0.96</friction>          
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>Nexus_Executioner_Meteor</defName> 
+    <label>shuttle incoming</label>
+    <thingClass>tsmod.Skyfaller_SpawningShuttle</thingClass>
+
+    <graphicData>
+      <texPath>tsmod/Executioner_west</texPath> 
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+
+    <skyfaller>
+      <shadow>tsmod/Executioner_west</shadow>
+      <shadowSize>(3, 3)</shadowSize>
+      <anticipationSound>DropPod_Fall</anticipationSound>
+      <anticipationSoundTicks>60</anticipationSoundTicks> 
+    </skyfaller>
+
+    <modExtensions>
+      <li Class="tsmod.ShuttleModExtension">
+        <textureRotationOffset>-90</textureRotationOffset>
+        <impactShakeAmount>1.0</impactShakeAmount>
+        <impactDustScale>4.0</impactDustScale>
+        <projectileToSpawn>Nexus_Executioner_MeteorP</projectileToSpawn>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <JobDef>
+    <defName>Nexus_Job_MeteorStrike</defName> <driverClass>tsmod.JobDriver_NexusMeteorStrike</driverClass>
+    <reportString>正在引导撞击。</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <suspendable>false</suspendable>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+  </JobDef>
+
+  <JobDef>
+    <defName>Nexus_Job_Airdrop</defName> <driverClass>tsmod.JobDriver_NexusAirdrop</driverClass>
+    <reportString>正在呼叫空投。</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <suspendable>false</suspendable>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+  </JobDef>
+
+</Defs>
+

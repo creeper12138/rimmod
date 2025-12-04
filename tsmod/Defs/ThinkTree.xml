@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThinkTreeDef>
+    <defName>Nexus_Executioner_AI</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_Subtree"><treeDef>Downed</treeDef></li>
+        <li Class="ThinkNode_Subtree"><treeDef>BurningResponse</treeDef></li>
+        
+        <li Class="ThinkNode_Subtree"><treeDef>LordDuty</treeDef></li>
+
+        <li Class="tsmod.JobGiver_ExecutionerHunt" />
+
+        <li Class="JobGiver_IdleForever" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <ThinkTreeDef>
+    <defName>Nexus_Observer_AI</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_Subtree"><treeDef>Downed</treeDef></li>
+        <li Class="ThinkNode_Subtree"><treeDef>BurningResponse</treeDef></li>
+        <li Class="ThinkNode_Subtree"><treeDef>MentalStateCritical</treeDef></li>
+        
+        <li Class="ThinkNode_Subtree"><treeDef>LordDuty</treeDef></li>
+
+        <li Class="tsmod.JobGiver_ObserverHunt" />
+
+        <li Class="JobGiver_WanderAnywhere">
+          <maxDanger>Deadly</maxDanger>
+          <ticksBetweenWandersRange>120~240</ticksBetweenWandersRange>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+<ThinkTreeDef>
+    <defName>Nexus_Auditor_AI</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_Subtree"><treeDef>Downed</treeDef></li>
+        <li Class="ThinkNode_Subtree"><treeDef>BurningResponse</treeDef></li>
+        
+        <li Class="ThinkNode_Subtree"><treeDef>LordDuty</treeDef></li>
+
+        <li Class="tsmod.JobGiver_AuditorCollect" />
+
+        <li Class="JobGiver_WanderAnywhere">
+          <maxDanger>Deadly</maxDanger>
+          <ticksBetweenWandersRange>120~240</ticksBetweenWandersRange>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+</Defs>

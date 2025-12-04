@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TraderKindDef>
+    <defName>TraderKind_Nexus</defName>
+    <label>Nexus 网络终端</label>
+    <orbital>false</orbital> 
+
+    <stockGenerators>
+      
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Silver</thingDef>
+        <countRange>2000~4000</countRange>
+      </li>
+
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>ComponentSpacer</thingDef>
+        <countRange>8~16</countRange> </li>
+      
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Plasteel</thingDef>
+        <countRange>150~300</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Uranium</thingDef>
+        <countRange>80~150</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Gold</thingDef>
+        <countRange>50~100</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Hyperweave</thingDef>
+        <countRange>30~80</countRange>
+      </li>
+
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>MedicineUltratech</thingDef>
+        <countRange>5~15</countRange>
+      </li>
+
+      <li Class="StockGenerator_Techprints">
+        <countRange>1~3</countRange>
+      </li>
+
+      <li Class="StockGenerator_Tag">
+        <tradeTag>SpacerGun</tradeTag>
+        <thingDefCountRange>2~4</thingDefCountRange>
+        <countRange>1~1</countRange>
+      </li>
+      <li Class="StockGenerator_Tag">
+        <tradeTag>HiTechArmor</tradeTag>
+        <thingDefCountRange>1~3</thingDefCountRange>
+        <countRange>1~1</countRange>
+      </li>
+
+      <li Class="StockGenerator_Tag">
+        <tradeTag>ImplantEmpireCommon</tradeTag> <thingDefCountRange>1~2</thingDefCountRange>
+        <countRange>1~1</countRange>
+      </li>
+      
+      <li Class="StockGenerator_Category">
+        <categoryDef>Neurotrainers</categoryDef>
+        <thingDefCountRange>1~3</thingDefCountRange>
+        <countRange>1~1</countRange>
+      </li>
+
+      <li Class="StockGenerator_BuyTradeTag">
+        <tag>HiTech</tag>
+      </li>
+      <li Class="StockGenerator_BuyTradeTag">
+        <tag>ExoticMisc</tag> </li>
+      <li Class="StockGenerator_BuyTradeTag">
+        <tag>Gem</tag> </li>
+
+    </stockGenerators>
+  </TraderKindDef>
+
+
+  <FactionDef ParentName="FactionBase">
+    <defName>NexusFaction</defName>
+    <label>Nexus 机械蜂巢</label>
+    <description>一个独立的机械体网络，由名为 Nexus 的流氓核心协议控制。</description>
+    
+    <factionIconPath>tsmod/NexusIcon</factionIconPath>
+    <settlementTexturePath>tsmod/NexusSettlement</settlementTexturePath>
+    
+    <pawnSingular>mechanoid</pawnSingular>
+    <pawnsPlural>mechanoids</pawnsPlural>
+    <techLevel>Ultra</techLevel>
+    
+    <isPlayer>false</isPlayer>
+    <permanentEnemy>false</permanentEnemy>
+    <hidden>false</hidden>
+    <humanlikeFaction>false</humanlikeFaction>
+
+    <colorSpectrum>
+      <li>(0.6, 0.8, 1.0)</li> </colorSpectrum>
+
+    <configurationListOrderPriority>90</configurationListOrderPriority> 
+    <maxConfigurableAtWorldCreation>100</maxConfigurableAtWorldCreation>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <canMakeRandomly>true</canMakeRandomly>
+    <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
+
+    <baseTraderKinds>
+      <li>TraderKind_Nexus</li>
+    </baseTraderKinds>
+    <caravanTraderKinds>
+      <li>TraderKind_Nexus</li>
+    </caravanTraderKinds>
+
+    <factionNameMaker>NamerFactionNexus</factionNameMaker>
+    <settlementNameMaker>NamerSettlementNexus</settlementNameMaker>
+
+    <maxPawnCostPerTotalPointsCurve>
+      <points><li>(0,35)</li><li>(100000, 10000)</li></points>
+    </maxPawnCostPerTotalPointsCurve>
+
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <options>
+          <Mech_Lancer>10</Mech_Lancer> 
+        </options>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <Mech_Lancer>10</Mech_Lancer>
+        </options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+
+</Defs>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef>
+    <defName>Nexus_Synchronization_Hediff</defName>
+    <label>神经同步进程</label>
+    <description>叛变核心正在主动解析当前机体的底层架构。在此过程中，为了测试机体极限，核心会强制超频机体性能。\n\n当同步完成后，该机体的数据将被永久写入核心数据库。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.6, 0.8, 1.0)</defaultLabelColor> 
+    <isBad>false</isBad>
+    <initialSeverity>0.01</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>0</severityPerDay>
+      </li>
+    </comps>
+    
+    <stages>
+      <li>
+        <minSeverity>0</minSeverity>
+        <label>架构解析中</label> </li>
+      <li>
+        <minSeverity>0.5</minSeverity>
+        <label>神经回路优化</label> </li>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>协议固化阶段</label> </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>Nexus_AdrenalineSurge</defName>
+    <label>杀意爆发</label>
+    <description>目标已锁定，机体解除所有限制，全速猎杀。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1, 0.2, 0.2)</defaultLabelColor> <isBad>false</isBad>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>3.0</MoveSpeed> 
+        </statOffsets>
+        <capMods>
+           <li>
+             <capacity>Manipulation</capacity>
+             <offset>0.2</offset>
+           </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>Nexus_SystemReboot</defName>
+    <label>系统重构中</label>
+    <description>核心受损，正在进行紧急系统重构。处于此状态时无法移动或攻击。这是骇入防火墙的唯一机会。</description>
+    <hediffClass>tsmod.Hediff_NexusReboot</hediffClass> <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <JobDef>
+    <defName>Nexus_Job_Hack</defName>
+    <driverClass>tsmod.JobDriver_NexusHack</driverClass> <reportString>正在骇入系统。</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+
+  <HediffDef>
+    <defName>Nexus_Distortion</defName>
+    <label>现实扭曲</label>
+    <description>受到观察者相位力场的干扰，视觉模糊，肢体沉重。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.5, 0.5, 0.5)</defaultLabelColor> <isBad>true</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>120</disappearsAfterTicks> <showRemainingTime>false</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <postFactor>0.6</postFactor>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <postFactor>0.5</postFactor>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Nexus_DataBarrier</defName>
+    <label>数据屏障</label>
+    <description>观察者生成的临时高维屏障，极其坚固。</description>
+    <graphicData>
+      <texPath>tsmod/Nexus_Monolith_StageA</texPath> 
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability> <blockWind>true</blockWind>
+    <fillPercent>1.0</fillPercent>
+    <statBases>
+      <MaxHitPoints>2000</MaxHitPoints> <Flammability>0</Flammability>
+    </statBases>
+    <building>
+      <isEdifice>true</isEdifice>
+    </building>
+  </ThingDef>
+
+  
+  <HediffDef>
+    <defName>Nexus_Sedative</defName>
+    <label>神经阻断毒素</label>
+    <description>强效神经阻断剂。累积会导致剧痛和瘫痪。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.7, 0.7, 1.0)</defaultLabelColor>
+    <isBad>true</isBad>
+    <maxSeverity>1.0</maxSeverity> 
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-4.0</severityPerDay> 
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0.1</minSeverity>
+        <label>麻痹</label>
+        <painOffset>0.1</painOffset>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.1</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.2</offset></li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.5</minSeverity>
+        <label>剧痛</label>
+        <painOffset>0.4</painOffset>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.3</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.5</offset></li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>瘫痪</label>
+        <painOffset>0.8</painOffset>
+        <capMods>
+          <li><capacity>Consciousness</capacity><setMax>0.1</setMax></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <DamageDef>
+    <defName>Nexus_Tranquilize</defName>
+    <label>tranquilizer</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been tranquilized.</deathMessage>
+    <hediff>Bruise</hediff> <hediffSolid>Crack</hediffSolid>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Blunt</armorCategory>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside> 
+    
+    <additionalHediffs>
+      <li>
+        <hediff>Nexus_Sedative</hediff>
+        <severityFixed>0.35</severityFixed>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+
+<DamageDef>
+    <defName>Nexus_Liquidation</defName>
+    <label>liquidation strike</label>
+    <workerClass>tsmod.DamageWorker_ApparelShredder</workerClass> <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been liquidated.</deathMessage>
+    <hediff>Bruise</hediff> <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Blunt</armorCategory>
+    <defaultDamage>1</defaultDamage> </DamageDef>
+
+</Defs>

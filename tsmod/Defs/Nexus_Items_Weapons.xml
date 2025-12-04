@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Nexus_RPG_Standard</defName>
+    <label>Nexus 动能火箭筒</label>
+    <description>多就是棒，大就是好，提供充足火力。</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/RocketLauncher</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    
+    <statBases>
+      <MarketValue>1000</MarketValue>
+      <Mass>8</Mass>
+      <RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>
+      <WorkToMake>30000</WorkToMake>
+    </statBases>
+
+    <costList>
+      <Steel>100</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+
+    <verbs>
+      <li>
+        <verbClass>Verb_ShootOneUse</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Nexus_Big</defaultProjectile>
+        <forcedMissRadius>1.9</forcedMissRadius>
+        
+        <targetParams>
+           <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+
+        <warmupTime>3.5</warmupTime>
+        <range>28.9</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>InfernoCannon_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+
+    <comps>
+      <li Class="tsmod.CompProperties_NexusVariant" />
+    </comps>
+  </ThingDef>
+
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Nexus_RPG_Unstable</defName>
+    <label>Nexus 动能火箭筒 (O.C.)</label> 
+    
+    <description>多就是棒，大就是好，提供过于的充足火力。</description>
+    
+    <tickerType>Normal</tickerType>
+
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/RocketLauncher</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      </graphicData>
+    
+    <statBases>
+      <MarketValue>1000</MarketValue> 
+      
+      <Mass>7.8</Mass> 
+      
+      <RangedWeapon_Cooldown>20</RangedWeapon_Cooldown>
+      <WorkToMake>30000</WorkToMake>
+    </statBases>
+
+    <costList>
+      <Steel>100</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+
+    <verbs>
+      <li>
+        <verbClass>Verb_ShootOneUse</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Nexus_Liar</defaultProjectile>
+        
+        <forcedMissRadius>5.9</forcedMissRadius>
+
+        <targetParams>
+           <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+
+        <warmupTime>3.5</warmupTime>
+        <range>28.9</range>
+        
+        <burstShotCount>1</burstShotCount>
+        <soundCast>InfernoCannon_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+
+    <comps>
+      <li Class="tsmod.CompProperties_NexusVariant" />
+      
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>15</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <chanceToStartFire>0.5</chanceToStartFire>
+        <explodeOnKilled>true</explodeOnKilled>
+        <startWickHitPointsPercent>0.95</startWickHitPointsPercent> 
+      </li>
+    </comps>
+  </ThingDef>
+
+<ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Nexus_Big</defName> 
+    <label>Nexus重型火箭弹</label>
+    
+    <graphicData>
+      <texPath>Things/Projectile/Rocket_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    
+    <thingClass>Projectile_Explosive</thingClass>
+
+    <projectile>
+      <damageDef>Bomb</damageDef> <damageAmountBase>50</damageAmountBase> <explosionRadius>12.9</explosionRadius> 
+      
+      <speed>50</speed> <arcHeightFactor>2</arcHeightFactor> </projectile>
+  </ThingDef>
+
+<ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Nexus_Liar</defName>
+    <label>Nexus重型火箭弹</label>
+    <graphicData>
+      <texPath>Things/Projectile/Rocket_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    
+    <thingClass>tsmod.Projectile_Liar</thingClass>
+
+    <projectile>
+      <damageDef>Bomb</damageDef> 
+      <damageAmountBase>50</damageAmountBase> 
+      
+      <explosionRadius>12.9</explosionRadius> 
+      
+      <speed>50</speed>
+    </projectile>
+  </ThingDef>
+
+</Defs>

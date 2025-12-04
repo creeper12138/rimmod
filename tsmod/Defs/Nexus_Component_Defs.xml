@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <tsmod.NexusItemPairDef>
+    <defName>Pair_Nexus_RPG</defName>
+    <label>RPG 套装</label>
+    <standardDef>Nexus_RPG_Standard</standardDef>
+    <variantDef>Nexus_RPG_Unstable</variantDef>
+    <scanCost>80</scanCost>
+  </tsmod.NexusItemPairDef>
+
+  </Defs>

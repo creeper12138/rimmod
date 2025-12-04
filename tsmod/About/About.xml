@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <packageId>Nexus.Mechanoids</packageId>
+    
+    <name>Nexus Intelligent Mechanoids (Dev)</name>
+    
+    <author>crp</author>
+
+    <supportedVersions>
+        <li>1.5</li>
+        <li>1.6</li>
+    </supportedVersions>
+    
+    <loadAfter>
+        <li>Ludeon.RimWorld.Biotech</li>
+    </loadAfter>
+    
+    <description>
+[h1]Nexus Intelligent Mechanoids (Nexus 智能机械)[/h1]
+[i]当前版本：开发测试版 (Dev)[/i]
+
+[hr][/hr]
+
+[h2]简介 | Introduction[/h2]
+Nexus 不仅仅是敌人，它们是一个高度进化的机械蜂巢思维。
+本模组引入了一个名为 "The Nexus" 的智能机械派系，以及一套允许玩家“觉醒”并利用机械单位的全新机制。
+
+[hr][/hr]
+
+[h2]前置需求 | Dependencies[/h2]
+[list]
+[*]RimWorld DLC: Biotech (生物科技)
+[*]Harmony (必须加载)
+[/list]
+
+[h2]注意 | Note[/h2]
+这是开发测试版本，功能可能会随时调整。遇到 Bug 请在评论区反馈。
+    </description>
+
+    <modDependencies>
+        <li>
+            <packageId>brrainz.harmony</packageId>
+            <displayName>Harmony</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+        </li>
+    </modDependencies>
+</ModMetaData>

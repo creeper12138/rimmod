@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+   <ThingDef ParentName="BuildingBase">
+    <defName>Nexus_ComputingNode</defName>
+    <label>运算解析服务器</label>
+    <description>一台高功率的数据处理阵列。它可以解析“未解析数据碎片”，将其转化为协议点数。\n\n当它连接到高级研究台时，如果处于运行状态，可以极大幅度加速“智能网络”类别的科技研发。</description>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>tsmod/sever</texPath> <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.6,1.6)</drawSize>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+      </shadowData>
+    </graphicData>
+    
+    <size>(1,1)</size>
+    <rotatable>true</rotatable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability> <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    
+    <costList>
+      <Steel>100</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <designationCategory>Misc</designationCategory> <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>500</basePowerConsumption> <shortCircuitInRain>true</shortCircuitInRain>
+      </li>
+      
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(0, 217, 255, 0)</glowColor>
+      </li>
+      
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusher</compClass>
+        <heatPerSecond>12</heatPerSecond> <heatPushMaxTemperature>60</heatPushMaxTemperature>
+      </li>
+
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>2.0</fuelConsumptionRate> <fuelCapacity>10.0</fuelCapacity> <fuelFilter>
+          <thingDefs>
+            <li>Nexus_RawDataShard</li>
+          </thingDefs>
+        </fuelFilter>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+      </li>
+
+      <li Class="CompProperties_Facility">
+        <maxSimultaneous>1</maxSimultaneous> <maxDistance>6</maxDistance> </li>
+      
+      <li Class="CompProperties">
+    <compClass>tsmod.CompDataProcessor</compClass>
+</li>
+    </comps>
+
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+  <defName>Nexus_RawDataShard</defName>
+  <label>未解析数据碎片</label>
+  <description>一块沉重的、散发着微热的计算核心，剥离自被击毁的机械体。它包含着杂乱的底层指令和加密数据。\n\n需要通过运算节点解析为协议点数。请注意，它非常沉重且无法压缩堆叠。</description>
+  
+  <graphicData>
+    <texPath>tsmod/RawDataShard</texPath> <graphicClass>Graphic_Single</graphicClass>
+    <drawSize>0.8</drawSize> </graphicData>
+
+  <statBases>
+    <MarketValue>15</MarketValue> 
+    <Mass>8.0</Mass>
+    <MaxHitPoints>100</MaxHitPoints>
+    <Flammability>0.5</Flammability> <DeteriorationRate>2.0</DeteriorationRate> </statBases>
+
+  <stackLimit>1</stackLimit>
+  
+  <thingCategories>
+    <li>Manufactured</li> </thingCategories>
+  
+  <comps>
+    <li Class="CompProperties_Glower">
+      <glowRadius>1</glowRadius>
+      <glowColor>(0, 200, 255, 0)</glowColor> </li>
+  </comps>
+</ThingDef>
+   
+  <ThingDef ParentName="ResourceBase">
+    <defName>TS_SimpleItem</defName>
+    <label>TS 纯净物品</label>
+    <description>这是一个没有任何特殊功能的物品。</description>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>100</MarketValue>
+      <Mass>0.5</Mass>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>My_Sliding_Shuttle_Projectile</defName>
+    <label>crashing shuttle</label>
+    <thingClass>tsmod.Projectile_SlidingShuttle</thingClass>
+    <rotatable>false</rotatable>
+    <graphicData>
+      <texPath>Things/Special/DropPod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <projectile>
+      <damageAmountBase>50</damageAmountBase>
+      <speed>0</speed> 
+      <damageDef>Blunt</damageDef>
+      <flyOverhead>false</flyOverhead>
+    </projectile>
+    <modExtensions>
+      <li Class="tsmod.ShuttleModExtension">
+        <slideSpeed>45</slideSpeed>        
+        <collisionRadius>0.5</collisionRadius> 
+        <friction>0.96</friction>          
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>My_Incoming_Shuttle</defName> 
+    <label>shuttle incoming</label>
+    <thingClass>tsmod.Skyfaller_SpawningShuttle</thingClass>
+
+    <graphicData>
+      <texPath>Things/Special/DropPod</texPath> 
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+
+    <skyfaller>
+      <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+      <shadowSize>(3, 3)</shadowSize>
+      <anticipationSound>DropPod_Fall</anticipationSound>
+      <anticipationSoundTicks>60</anticipationSoundTicks> 
+    </skyfaller>
+
+    <modExtensions>
+      <li Class="tsmod.ShuttleModExtension">
+        <impactShakeAmount>1.0</impactShakeAmount>
+        <impactDustScale>4.0</impactDustScale>
+        <projectileToSpawn>My_Sliding_Shuttle_Projectile</projectileToSpawn>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>My_Massive_Shuttle_Projectile</defName> 
+    <label>crashed cruiser</label>
+    <thingClass>tsmod.Projectile_SlidingShuttle</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Misc/Shuttle</texPath> 
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <projectile>
+      <damageAmountBase>50</damageAmountBase>
+      <speed>0</speed>
+      <damageDef>Blunt</damageDef>
+    </projectile>
+    <modExtensions>
+      <li Class="tsmod.ShuttleModExtension">
+        <textureRotationOffset>-90</textureRotationOffset>
+        <slideSpeed>20</slideSpeed>
+        <collisionRadius>1.2</collisionRadius>
+        <friction>0.992</friction>
+        <effectScale>(3, 3)</effectScale>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>My_Massive_Shuttle_Incoming</defName> 
+    <label>incoming cruiser</label>
+    <thingClass>tsmod.Skyfaller_SpawningShuttle</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Misc/Shuttle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <skyfaller>
+      <shadow>Things/Skyfaller/SkyfallerShadowCircle</shadow>
+      <shadowSize>(8,8)</shadowSize>
+      <movementType>Decelerate</movementType>
+    </skyfaller>
+    <modExtensions>
+      <li Class="tsmod.ShuttleModExtension">
+        <textureRotationOffset>-90</textureRotationOffset>
+        <impactShakeAmount>5.0</impactShakeAmount>
+        <impactDustScale>10.0</impactDustScale>
+        <projectileToSpawn>My_Massive_Shuttle_Projectile</projectileToSpawn>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+
+<ThingDef ParentName="BuildingBase">
+    <defName>Nexus_Beacon_Resource</defName>
+    <label>Nexus 资源采集器</label>
+    <description>Nexus 投放的工业级资源收割终端。</description>
+    
+    <thingClass>tsmod.Building_ResourceBeacon</thingClass>
+    <size>(2,2)</size>
+    <graphicData>
+      <texPath>tsmod/Beacon_Resource</texPath> <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockLight>true</blockLight>
+    <fillPercent>1</fillPercent>
+    <tickerType>Normal</tickerType> <statBases>
+      <MaxHitPoints>2500</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    
+    <building>
+      <claimable>false</claimable>
+    </building>
+
+<comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>6</glowRadius>
+        <glowColor>(255, 255, 0, 255)</glowColor> 
+      </li>
+    </comps>
+  </ThingDef>
+
+
+<ThingDef ParentName="BuildingBase">
+    <defName>Nexus_Beacon_Logging</defName>
+    <label>Nexus 伐木终端</label>
+    <description>Nexus 投放的工业级资源收割终端。</description>
+    
+    <thingClass>tsmod.Building_LoggingBeacon</thingClass>
+    <size>(2,2)</size>
+    <graphicData>
+      <texPath>tsmod/Beacon_Logging</texPath> <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockLight>true</blockLight>
+    <fillPercent>1</fillPercent>
+    <tickerType>Normal</tickerType> <statBases>
+      <MaxHitPoints>2500</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    
+    <building>
+      <claimable>false</claimable>
+    </building>
+<comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>6</glowRadius>
+        <glowColor>(0, 255, 0, 255)</glowColor> 
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Nexus_Beacon_Combat</defName>
+    <label>Nexus 治安枢纽</label>
+    <description>Nexus 投放的区域武力控制终端。它不直接攻击，而是作为一个前进基地，定期空投机械体部队来维持该区域的“秩序”。</description>
+    
+    <thingClass>tsmod.Building_CombatBeacon</thingClass>
+    <size>(2,2)</size>
+    <graphicData>
+      <texPath>tsmod/Beacon_Combat</texPath> 
+      <graphicClass>Graphic_Single</graphicClass>
+      
+      <drawSize>(5, 5)</drawSize>
+      
+      <drawOffset>(0, 0, 0.75)</drawOffset> 
+
+      <shadowData>
+        <volume>(1.8, 0.5, 1.8)</volume>
+        
+        <offset>(0, 0, -0.3)</offset>
+      </shadowData>
+    </graphicData>
+
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockLight>false</blockLight>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <rotatable>false</rotatable>
+    
+    <tickerType>Normal</tickerType>
+
+    <statBases>
+      <MaxHitPoints>3000</MaxHitPoints> <WorkToBuild>10000</WorkToBuild>
+      <Flammability>0</Flammability>    <Beauty>-50</Beauty>
+    </statBases>
+    
+    <building>
+      <claimable>false</claimable>
+      <deconstructible>false</deconstructible>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    
+    <damageMultipliers>
+        <li>
+            <damageDef>Blunt</damageDef>
+            <multiplier>0.5</multiplier>
+        </li>
+    </damageMultipliers>
+
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>6</glowRadius>
+        <glowColor>(255, 0, 0, 0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+  <defName>Nexus_Monolith</defName>
+  <label>Nexus Monolith</label><thingClass>tsmod.Building_NexusMonolith</thingClass>
+  <graphicData>
+    <texPath>tsmod/Nexus_Monolith_StageA</texPath> <graphicClass>Graphic_Single</graphicClass>
+    <drawSize>(6,6)</drawSize>
+  </graphicData>
+  <size>(2,3)</size>
+  <statBases>
+    <MaxHitPoints>5000</MaxHitPoints>
+  </statBases>
+  <tickerType>Normal</tickerType>
+<comps>
+    <li Class="tsmod.CompProperties_Monolith">
+      <awakeningTicks>2500</awakeningTicks>
+    </li>
+
+    <li Class="CompProperties_Glower">
+      <glowRadius>4</glowRadius> <glowColor>(255, 50, 50, 0)</glowColor> </li>
+  </comps>
+
+
+</ThingDef>
+
+</Defs>

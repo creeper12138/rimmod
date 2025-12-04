@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RulePackDef>
+    <defName>NamerFactionNexus</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->Nexus [concept]</li>      <li>r_name->[concept] 集合</li>        <li>r_name->[concept] 网络</li>        <li>r_name->[concept] 蜂巢</li>        <li>concept->核心</li>      <li>concept->协议</li>      <li>concept->系统</li>      <li>concept->网格</li>      <li>concept->矩阵</li>      <li>concept->链路</li>      <li>concept->突触</li>      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerSettlementNexus</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->[type] [code]</li>        <li>r_name->[type] [letter]-[Digit][Digit]</li> <li>type->节点</li>        <li>type->终端</li>        <li>type->中继站</li>      <li>type->服务器</li>      <li>type->数据枢纽</li>    <li>type->端口</li>        <li>code->阿尔法</li>      <li>code->贝塔</li>        <li>code->伽马</li>        <li>code->德尔塔</li>      <li>code->零号</li>        <li>code->原初</li>        <li>code->[Digit][Digit][Digit]</li>
+        <li>Digit->0</li><li>Digit->1</li><li>Digit->2</li><li>Digit->3</li><li>Digit->4</li>
+        <li>Digit->5</li><li>Digit->6</li><li>Digit->7</li><li>Digit->8</li><li>Digit->9</li>
+        
+        <li>letter->A</li><li>letter->B</li><li>letter->X</li><li>letter->Z</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

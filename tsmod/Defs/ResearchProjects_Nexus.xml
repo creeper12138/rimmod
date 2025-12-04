@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ResearchProjectDef>
+    <defName>IMN_BasicAutomation</defName> 
+    <label>基础机械协议</label>
+    <description>解析底层机械体的逻辑指令。解锁这门技术允许我们重写受损机械体的敌我识别系统，将其转化为简单的劳工。\n\n如果没有运算服务器的辅助，这项复杂的逆向工程将耗费数年。</description>
+    
+    <tab>Main</tab>
+    
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    
+    <baseCost>5000</baseCost>
+    <techLevel>Industrial</techLevel>
+    
+    <researchViewX>8.0</researchViewX>
+    <researchViewY>4.5</researchViewY>
+  </ResearchProjectDef>
+
+
+  <ResearchProjectDef>
+    <defName>IMN_SignalInterference</defName>
+    <label>信号干扰逻辑</label>
+    <description>深入解析 Nexus 网络的通信波段。掌握此技术后，我们可以制造逻辑锁来瘫痪敌方信标，甚至伪造识别码让来袭部队撤退。</description>
+    
+    <tab>Main</tab>
+    
+    <prerequisites>
+      <li>IMN_BasicAutomation</li> <li>Fabrication</li>         </prerequisites>
+    
+    <baseCost>8000</baseCost>
+    <techLevel>Spacer</techLevel>
+    
+    <researchViewX>13.0</researchViewX>
+    <researchViewY>4.5</researchViewY>
+  </ResearchProjectDef>
+
+
+  <ResearchProjectDef>
+    <defName>IMN_NexusDomination</defName>
+    <label>核心思维上传</label>
+    <description>终极的黑客工程。我们将构建一套足以覆盖区域 Nexus 网络的超级协议。完成后，我们将能够接管敌方资源节点，甚至引发机械内战。\n\n这是一场算力的飞升。</description>
+    
+    <tab>Main</tab>
+    
+    <prerequisites>
+      <li>IMN_SignalInterference</li>
+      <li>AdvancedFabrication</li> </prerequisites>
+    
+    <baseCost>16000</baseCost>
+    <techLevel>Spacer</techLevel>
+    
+    <researchViewX>16.0</researchViewX>
+    <researchViewY>4.5</researchViewY>
+  </ResearchProjectDef>
+
+</Defs>

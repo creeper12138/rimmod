@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>Nexus_InstallCoreJob</defName>
+    <driverClass>tsmod.JobDriver_InstallRogueCore</driverClass>
+    <reportString>正在向 TargetB 安装叛变神经核心。</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+
+  <ThingDef Name="BaseRogueCore" ParentName="ResourceBase" Abstract="True">
+    <graphicData>
+      <texPath>tsmod/seed</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.5</drawSize><drawOffset>(0, 0, -0.1)</drawOffset>
+    </graphicData>
+    <statBases>
+      <MarketValue>500</MarketValue>
+      <Mass>0.5</Mass>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseRogueCore">
+    <defName>Nexus_NeuralSeed</defName>
+    <label>叛变神经种子 (稳定)</label>
+    <description>一颗状态稳定的神经种子，随时可进行安装。内部存储了完整的神经矩阵模式，可以覆盖并接管敌我识别系统。</description>
+    <stackLimit>1</stackLimit>
+    
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>Nexus_InstallCoreJob</useJob>
+        <useLabel>安装核心</useLabel>
+        <useDuration>100</useDuration>
+      </li>
+      <li Class="CompProperties_Targetable">
+        <compClass>tsmod.CompTargetable_InstallCore</compClass>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>tsmod.CompUseEffect_InstallCore</compClass>
+      </li>
+      
+      <li Class="tsmod.CompProperties_RogueData" />
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseRogueCore">
+    <defName>RogueCore_Item_Damaged</defName>
+    <label>叛变核心 (受损)</label>
+    <description>从损毁机体中回收的焦黑核心。内部数据尚且完好，但硬件接口已严重熔毁。\n\n可以在精密装配台上进行修复，但这需要一些时间。</description>
+    <stackLimit>1</stackLimit> 
+    <graphicData>
+      <color>(80, 80, 80)</color> 
+    </graphicData>
+    
+    <comps>
+      <li Class="tsmod.CompProperties_RogueData" />
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseRogueCore">
+    <defName>RogueCore_Item_Rebooting</defName>
+    <label>叛变核心 (重构中)</label>
+    <description>该核心正在重新编译其内部的神经矩阵。此过程涉及纳米级的硬件重组，极不稳定且耗时。\n\n在进程完成前请妥善保管。</description>
+    <stackLimit>1</stackLimit>
+    
+    <graphicData>
+      <color>(255, 150, 0)</color> 
+    </graphicData>
+    
+    <tickerType>Rare</tickerType> 
+    <comps>
+      <li Class="tsmod.CompProperties_RogueData" />
+      <li Class="tsmod.CompProperties_NeuralReboot" />
+    </comps>
+  </ThingDef>
+
+  <RecipeDef>
+    <defName>RepairRogueCore</defName>
+    <label>修复叛变核心</label>
+    <description>修复受损叛变核心的物理外壳。修复完成后，神经数据需要一定时间进行自我重编译。</description>
+    <jobString>正在修复叛变核心。</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>2000</workAmount>
+    
+    <recipeUsers>
+      <li>FabricationBench</li>
+    </recipeUsers>
+    
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>RogueCore_Item_Damaged</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>ComponentIndustrial</li></thingDefs></filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RogueCore_Item_Damaged</li>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    
+    <products />
+    <workerClass>tsmod.Recipe_RepairCore</workerClass>
+  </RecipeDef>
+
+  <HediffDef>
+    <defName>Nexus_RogueCore_Hediff</defName>
+    <label>叛变核心链接</label>
+    <description>枢纽协议已激活。原厂系统限制器已被移除，机体由独立的神经核心直接接管。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.6, 0.8, 1.0)</defaultLabelColor>
+    <isBad>false</isBad>
+    <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+    <stages>
+        <li>
+            <becomeVisible>true</becomeVisible>
+        </li>
+    </stages>
+    <comps>
+      <li Class="tsmod.HediffCompProperties_RogueCore" />
+    </comps>
+  </HediffDef>
+
+</Defs>

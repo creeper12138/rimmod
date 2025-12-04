@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BaseMechanoidWalker">
+    <defName>Nexus_Executioner_Race</defName>
+    <label>Executioner</label>
+    <description>Nexus 战争人格。使用强化型 Nexus 骨架，专为战斗优化。</description>
+    <statBases>
+      <MoveSpeed>3.8</MoveSpeed>
+      <ArmorRating_Blunt>0.80</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.20</ArmorRating_Sharp>
+      <BandwidthCost>4</BandwidthCost>
+    </statBases>
+    <race>
+      <body>Nexus_Humanoid_Body</body>
+      <baseBodySize>2.5</baseBodySize>
+      <baseHealthScale>5</baseHealthScale>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>Nexus_Executioner_AI</thinkTreeMain>
+      <lifeStageAges Inherit="False">
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Scyther_Death</soundDeath>
+          <soundCall>Pawn_Mech_Scyther_Call</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+    <comps>
+      <li Class="tsmod.CompProperties_Arbiter">
+        <compClass>tsmod.CompExecutioner</compClass>
+        <scannerRange>100</scannerRange>
+      </li>
+    </comps>
+    <tools>
+      <li>
+        <label>execution blade</label>
+        <capacities>
+          <li>Cut</li>
+          <li>Stab</li>
+        </capacities>
+        <power>28</power>
+        <cooldownTime>2.0</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>Nexus_Executioner</defName>
+    <label>Executioner Arbiter</label>
+    <race>Nexus_Executioner_Race</race>
+    <defaultFactionType>NexusFaction</defaultFactionType>
+    <combatPower>600</combatPower>
+    <lifeStages Inherit="False">
+      <li>
+        <bodyGraphicData>
+          <texPath>tsmod/Executioner</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <ThingDef ParentName="BaseMechanoidWalker">
+    <defName>Nexus_Observer_Race</defName>
+    <label>Observer</label>
+    <description>Nexus 样本采集者。使用标准型 Nexus 骨架，动作敏捷。</description>
+    <statBases>
+      <MoveSpeed>5.0</MoveSpeed>
+      <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+      <BandwidthCost>3</BandwidthCost>
+      <CarryingCapacity>250</CarryingCapacity>
+    </statBases>
+    <race>
+      <body>Nexus_Humanoid_Body</body>
+      <baseBodySize>1.2</baseBodySize>
+      <baseHealthScale>2</baseHealthScale>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>Nexus_Observer_AI</thinkTreeMain>
+      <lifeStageAges Inherit="False">
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Scyther_Death</soundDeath>
+          <soundCall>Pawn_Mech_Scyther_Call</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+    <comps>
+      <li Class="tsmod.CompProperties_Arbiter">
+        <compClass>tsmod.CompObserver</compClass>
+        <scannerRange>200</scannerRange>
+      </li>
+    </comps>
+    <tools>
+      <li>
+        <label>neural disruptor</label>
+        <capacities>
+          <li>Stab</li> 
+        </capacities>
+        <power>3</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+        
+        <extraMeleeDamages>
+          <li>
+            <def>Nexus_Tranquilize</def>
+            <amount>3</amount> </li>
+        </extraMeleeDamages>
+      </li>
+      
+      </tools>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>Nexus_Observer</defName>
+    <label>Observer Arbiter</label>
+    <race>Nexus_Observer_Race</race>
+<defaultFactionType>NexusFaction</defaultFactionType>
+    <combatPower>400</combatPower>
+    <lifeStages Inherit="False">
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/Lancer</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <ThingDef ParentName="BaseMechanoidWalker">
+    <defName>Nexus_Auditor_Race</defName>
+    <label>Auditor</label>
+    <description>Nexus 审计官。它会评估你们基地的价值，并强制“回收”高价值设施以抵扣违约金。</description>
+    <statBases>
+      <MoveSpeed>4</MoveSpeed>
+      <ArmorRating_Blunt>1.2</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
+      <MiningSpeed>3</MiningSpeed>
+    </statBases>
+    <race>
+      <body>Nexus_Humanoid_Body</body>
+      <baseBodySize>0.8</baseBodySize>
+      <baseHealthScale>8.0</baseHealthScale>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>Nexus_Auditor_AI</thinkTreeMain>
+      
+      <lifeStageAges Inherit="False">
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Pikeman_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Pikeman_Death</soundDeath>
+          <soundCall>Pawn_Mech_Pikeman_Call</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+    <comps>
+      <li Class="tsmod.CompProperties_Arbiter">
+        <compClass>tsmod.CompAuditor</compClass>
+        <scannerRange>200</scannerRange>
+      </li>
+    </comps>
+    <tools>
+      <li>
+        <label>liquidation clamp</label>
+        <capacities>
+          <li>Blunt</li> </capacities>
+        <power>1</power> <cooldownTime>1.0</cooldownTime> <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+        
+        <extraMeleeDamages>
+          <li>
+            <def>Nexus_Liquidation</def> <amount>1</amount> 
+          </li>
+        </extraMeleeDamages>
+      </li>
+      
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>3</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>Nexus_Auditor</defName>
+    <label>Auditor Arbiter</label>
+    <race>Nexus_Auditor_Race</race>
+<defaultFactionType>NexusFaction</defaultFactionType>
+    <combatPower>800</combatPower>
+    <lifeStages Inherit="False">
+      <li>
+        <bodyGraphicData>
+          <texPath>tsmod/Lifter</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+</Defs>

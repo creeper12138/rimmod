@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IncidentDef>
+    <defName>TS_Incident_ResourceDrop</defName>
+    <label>神秘空投</label>
+    
+    <workerClass>tsmod.IncidentWorker_DropMyItem</workerClass>
+    
+    <category>Misc</category>
+    
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    
+    <baseChance>5.0</baseChance>
+    
+    <earliestDay>2</earliestDay>
+    
+  </IncidentDef>
+
+
+  <IncidentDef>
+    <defName>Incident_Crash_Small</defName>
+    <label>Small shuttle crash</label>
+    <category>ThreatSmall</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>tsmod.IncidentWorker_CrashShuttle</workerClass> <letterLabel>Shuttle Crash</letterLabel>
+    <letterText>A small escape pod has crashed nearby.</letterText>
+    <letterDef>ThreatSmall</letterDef>
+    <baseChance>2.0</baseChance>
+    
+    <modExtensions>
+      <li Class="tsmod.IncidentShuttleConfig">
+        <skyfallerToSpawn>My_Incoming_Shuttle</skyfallerToSpawn> 
+        <steelCount>30~50</steelCount>
+        <pawnCount>1</pawnCount>
+      </li>
+    </modExtensions>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>Incident_Crash_Massive</defName>
+    <label>Massive cruiser crash</label>
+    <category>ThreatBig</category> <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>tsmod.IncidentWorker_CrashShuttle</workerClass> <letterLabel>Cruiser Impact</letterLabel>
+    <letterText>WARNING: A massive cruiser hull is de-orbiting rapidly!</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>0.5</baseChance>
+    
+    <modExtensions>
+      <li Class="tsmod.IncidentShuttleConfig">
+        <skyfallerToSpawn>My_Massive_Shuttle_Incoming</skyfallerToSpawn>
+        <steelCount>150~300</steelCount> <pawnCount>3</pawnCount>       </li>
+    </modExtensions>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>Nexus_Arrival_Event</defName>
+    <label>Nexus 穿梭机信号</label>
+    <workerClass>tsmod.IncidentWorker_NexusArrival</workerClass>
+    <category>ThreatSmall</category> 
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <baseChance>1.5</baseChance> <minRefireDays>15</minRefireDays>
+  </IncidentDef>
+
+<IncidentDef>
+    <defName>Nexus_BeaconArrival</defName>
+    <label>Nexus 信标投放</label>
+    <category>Misc</category> <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>tsmod.IncidentWorker_NexusBeaconArrival</workerClass>
+    <baseChance>0.8</baseChance> <minRefireDays>15</minRefireDays> </IncidentDef>
+
+
+</Defs>

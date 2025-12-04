@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <AbilityDef>
+    <defName>Nexus_Ability_MeteorStrike</defName>
+    <label>天陨冲击</label>
+    <description>化身为陨石冲向目标区域。</description>
+    <iconPath>tsmod/783</iconPath>
+    <cooldownTicksRange>1200</cooldownTicksRange>
+    <abilityClass>Ability</abilityClass>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>29.9</range>
+      <warmupTime>0.5</warmupTime>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    
+    <comps>
+      <li Class="tsmod.CompProperties_JobTrigger">
+        <jobDef>Nexus_Job_MeteorStrike</jobDef>
+      </li>
+
+      <li Class="tsmod.CompProperties_AbilityPointCost">
+        <amount>50</amount> </li>
+    </comps>
+  </AbilityDef>
+
+
+  <AbilityDef>
+    <defName>Nexus_Ability_Airdrop</defName>
+    <label>战术空投</label>
+    <description>呼叫穿梭机撞击目标。</description>
+    <iconPath>tsmod/936</iconPath>
+    <cooldownTicksRange>600</cooldownTicksRange>
+    
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>39.9</range>
+      <warmupTime>1.0</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    
+    <comps>
+      <li Class="tsmod.CompProperties_JobTrigger">
+        <jobDef>Nexus_Job_Airdrop</jobDef>
+      </li>
+
+      <li Class="tsmod.CompProperties_AbilityPointCost">
+        <amount>20</amount> </li>
+    </comps>
+  </AbilityDef>
+
+</Defs>
