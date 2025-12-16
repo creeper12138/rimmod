@@ -1,77 +1,69 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <TraderKindDef>
+ <TraderKindDef>
     <defName>TraderKind_Nexus</defName>
     <label>Nexus 网络终端</label>
     <orbital>false</orbital> 
 
     <stockGenerators>
-      
+      <li Class="StockGenerator_SingleDef">
+  <thingDef>Nexus_RawDataShard</thingDef>
+  <countRange>2~5</countRange> 
+</li>
+<li Class="StockGenerator_Tag">
+        <tradeTag>NexusExclusive</tradeTag>
+        <thingDefCountRange>1~2</thingDefCountRange> <countRange>1~2</countRange> </li>
+
+
       <li Class="StockGenerator_SingleDef">
         <thingDef>Silver</thingDef>
-        <countRange>2000~4000</countRange>
-      </li>
+        <countRange>4000~8000</countRange> </li>
 
-      <li Class="StockGenerator_SingleDef">
-        <thingDef>ComponentSpacer</thingDef>
-        <countRange>8~16</countRange> </li>
-      
-      <li Class="StockGenerator_SingleDef">
-        <thingDef>Plasteel</thingDef>
-        <countRange>150~300</countRange>
-      </li>
-      <li Class="StockGenerator_SingleDef">
-        <thingDef>Uranium</thingDef>
-        <countRange>80~150</countRange>
-      </li>
-      <li Class="StockGenerator_SingleDef">
-        <thingDef>Gold</thingDef>
-        <countRange>50~100</countRange>
-      </li>
-      <li Class="StockGenerator_SingleDef">
-        <thingDef>Hyperweave</thingDef>
-        <countRange>30~80</countRange>
-      </li>
-
-      <li Class="StockGenerator_SingleDef">
-        <thingDef>MedicineUltratech</thingDef>
-        <countRange>5~15</countRange>
-      </li>
-
-      <li Class="StockGenerator_Techprints">
-        <countRange>1~3</countRange>
-      </li>
-
-      <li Class="StockGenerator_Tag">
-        <tradeTag>SpacerGun</tradeTag>
-        <thingDefCountRange>2~4</thingDefCountRange>
-        <countRange>1~1</countRange>
-      </li>
-      <li Class="StockGenerator_Tag">
-        <tradeTag>HiTechArmor</tradeTag>
-        <thingDefCountRange>1~3</thingDefCountRange>
-        <countRange>1~1</countRange>
-      </li>
-
-      <li Class="StockGenerator_Tag">
-        <tradeTag>ImplantEmpireCommon</tradeTag> <thingDefCountRange>1~2</thingDefCountRange>
-        <countRange>1~1</countRange>
-      </li>
-      
       <li Class="StockGenerator_Category">
-        <categoryDef>Neurotrainers</categoryDef>
-        <thingDefCountRange>1~3</thingDefCountRange>
-        <countRange>1~1</countRange>
+        <categoryDef>MeatRaw</categoryDef>
+        <thingDefCountRange>3~6</thingDefCountRange> <countRange>200~500</countRange> </li>
+
+      <li Class="StockGenerator_Category">
+        <categoryDef>Leathers</categoryDef>
+        <thingDefCountRange>3~6</thingDefCountRange>
+        <countRange>100~300</countRange>
       </li>
 
-      <li Class="StockGenerator_BuyTradeTag">
-        <tag>HiTech</tag>
+      <li Class="StockGenerator_Category">
+        <categoryDef>Textiles</categoryDef>
+        <thingDefCountRange>1~3</thingDefCountRange>
+        <countRange>100~200</countRange>
       </li>
-      <li Class="StockGenerator_BuyTradeTag">
-        <tag>ExoticMisc</tag> </li>
-      <li Class="StockGenerator_BuyTradeTag">
-        <tag>Gem</tag> </li>
+      
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>MealNutrientPaste</thingDef>
+        <countRange>20~50</countRange>
+      </li>
+
+      <li Class="StockGenerator_BuySingleDef">
+        <thingDef>Steel</thingDef>
+      </li>
+      
+      <li Class="StockGenerator_BuySingleDef">
+        <thingDef>Plasteel</thingDef>
+      </li>
+
+      <li Class="StockGenerator_BuySingleDef">
+        <thingDef>Uranium</thingDef>
+      </li>
+      
+      <li Class="StockGenerator_BuySingleDef">
+        <thingDef>Gold</thingDef>
+      </li>
+
+      <li Class="StockGenerator_BuySingleDef">
+        <thingDef>ComponentIndustrial</thingDef>
+      </li>
+
+      <li Class="StockGenerator_BuySingleDef">
+        <thingDef>ComponentSpacer</thingDef>
+      </li>
 
     </stockGenerators>
   </TraderKindDef>

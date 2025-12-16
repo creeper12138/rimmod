@@ -171,4 +171,122 @@
     </projectile>
   </ThingDef>
 
+
+
+
+  <ThingDef ParentName="MedicineBase">
+    <defName>Nexus_Med_Standard</defName>
+    <label>Nexus 纳米医疗包</label>
+    <description>利用纳米机械重构血肉，医疗效果惊人。</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Medicine/MedicineUltratech</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>600</MarketValue>
+      <Mass>0.5</Mass>
+      <Flammability>0.7</Flammability>
+      <MedicalPotency>1.6</MedicalPotency> </statBases>
+    <comps>
+       <li Class="tsmod.CompProperties_NexusVariant" />
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="MedicineBase">
+    <defName>Nexus_Med_Trap</defName>
+    <label>Nexus 纳米医疗包</label>
+    <description>看起来像药，实际上是一罐过期的工业凝胶。甚至可能导致感染。</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Medicine/MedicineUltratech</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>600</MarketValue>
+      <Mass>0.5</Mass>
+      <Flammability>2.0</Flammability> <MedicalPotency>0.4</MedicalPotency> </statBases>
+    <comps>
+      <li Class="tsmod.CompProperties_NexusVariant" />
+      </comps>
+  </ThingDef>
+
+
+
+  <ThingDef ParentName="Bed">
+    <defName>Nexus_Bed_Royal</defName>
+    <label>Nexus 皇家木床</label>
+    <description>一张极其奢华的床铺，由古老的稀有木材雕刻而成。它散发着一种令人安心的香气，能让有机体瞬间进入深度睡眠。</description>
+    
+    <graphicData>
+      <texPath>Things/Building/Furniture/Bed/RoyalBed</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2.05,2.05)</drawSize>
+    </graphicData>
+    
+    <designationCategory></designationCategory>
+
+    <costList Inherit="False" />
+
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <MarketValue>3000</MarketValue> 
+      <Mass>50</Mass>
+      <BedRestEffectiveness>1.6</BedRestEffectiveness> <Comfort>1.2</Comfort> 
+      <ImmunityGainSpeedFactor>1.1</ImmunityGainSpeedFactor>
+    </statBases>
+    
+    <size>(2,2)</size>
+    
+    <building>
+      <bed_showSleeperBody>False</bed_showSleeperBody>
+      <bed_healPerDay>4</bed_healPerDay>
+    </building>
+    
+    <comps>
+      <li Class="tsmod.CompProperties_NexusVariant" />
+    </comps>
+    
+    <uiIconScale>1.0</uiIconScale>
+  </ThingDef>
+
+
+  <ThingDef ParentName="Bed">
+    <defName>Nexus_Bed_Royal_Trap</defName> <label>Nexus 皇家木床</label>
+    <description>一张极其奢华的床铺，由古老的稀有木材雕刻而成。它散发着一种令人安心的香气，能让有机体陷入无法抗拒的永恒沉眠... 或许太沉了一点。</description>
+    
+    <graphicData>
+      <texPath>Things/Building/Furniture/Bed/RoyalBed</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2.05,2.05)</drawSize>
+    </graphicData>
+    
+    <designationCategory></designationCategory>
+    <costList Inherit="False" />
+    
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <MarketValue>3000</MarketValue> 
+      <Mass>50</Mass>
+      <BedRestEffectiveness>0.1</BedRestEffectiveness> <Comfort>1.5</Comfort> <ImmunityGainSpeedFactor>1.1</ImmunityGainSpeedFactor>
+    </statBases>
+    
+    <size>(2,2)</size>
+    
+    <building>
+      <bed_showSleeperBody>False</bed_showSleeperBody>
+      <bed_healPerDay>4</bed_healPerDay>
+    </building>
+    
+    <comps>
+      <li Class="tsmod.CompProperties_NexusVariant" />
+    </comps>
+    
+    <uiIconScale>1.0</uiIconScale>
+  </ThingDef>
+
+
+
 </Defs>

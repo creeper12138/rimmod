@@ -62,7 +62,8 @@
     <label>Executioner Arbiter</label>
     <race>Nexus_Executioner_Race</race>
     <defaultFactionType>NexusFaction</defaultFactionType>
-    <combatPower>600</combatPower>
+    <combatPower>1000</combatPower>
+<allowInMechClusters>false</allowInMechClusters>
     <lifeStages Inherit="False">
       <li>
         <bodyGraphicData>
@@ -132,7 +133,9 @@
     <label>Observer Arbiter</label>
     <race>Nexus_Observer_Race</race>
 <defaultFactionType>NexusFaction</defaultFactionType>
-    <combatPower>400</combatPower>
+    <combatPower>1000</combatPower>
+<allowInMechClusters>false</allowInMechClusters>
+
     <lifeStages Inherit="False">
       <li>
         <bodyGraphicData>
@@ -209,7 +212,9 @@
     <label>Auditor Arbiter</label>
     <race>Nexus_Auditor_Race</race>
 <defaultFactionType>NexusFaction</defaultFactionType>
-    <combatPower>800</combatPower>
+    <combatPower>1000</combatPower>
+<allowInMechClusters>false</allowInMechClusters>
+
     <lifeStages Inherit="False">
       <li>
         <bodyGraphicData>

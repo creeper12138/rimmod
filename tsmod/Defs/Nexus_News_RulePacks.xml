@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RulePackDef>
+    <defName>Nexus_News_General</defName>
+    <include>
+      <li>GlobalUtility</li>
+      <li>ArtDescriptionUtility_Global</li> </include>
+    <rulePack>
+      <rulesStrings>
+        <li>root->[Header]: [News_Art]</li>
+        <li>root->[Header]: [News_Gossip]</li>
+        <li>root->[Header]: [News_Biology]</li>
+        <li>root->[Header]: [News_Weather]</li>
+        <li>root->[Header]: [News_LostFound]</li>
+
+        <li>root->[Header]: [News_Combat]</li>
+        <li>root->[Header]: [News_Economy]</li>
+        <li>root->[Header]: [News_Accident]</li>
+        <li>root->[Header]: [News_NexusPR]</li>
+
+        <li>News_Art->本周最佳艺术品是一座由 [Material] 制成的雕塑。它描绘了 [Animal] 正在 [Action_Weird] 的场景，画面的四周点缀着 [Quantity_Adj] 的 [Vegetable]。</li>
+        <li>News_Art->流行趋势报告：现在的年轻人喜欢把 [BodyPart] 涂成 [Color]，这象征了 [Concept_Deep]。</li>
+        <li>News_Art->一位艺术家声称他在 [Direction] 的石头纹理中看到了神，那看起来像是一个 [AdjectiveBad] 的 [Shape]。</li>
+
+        <li>News_Gossip->据传，[PersonJob] 汤姆因为嘲笑了一只 [Animal] 的 [BodyPart] 而遭到了报复。</li>
+        <li>News_Gossip->一场发生在 [Community] 的婚礼被迫取消，因为新郎发现新娘其实是三个叠在一起的 [Animal]。</li>
+        <li>News_Gossip->[PersonJob] 试图向 [Thing_Inanimate] 调情，结果遭到了冷漠的拒绝。这真是一个 [AdjectiveAngsty] 的故事。</li>
+
+        <li>News_Biology->警告：不要食用发光的 [Vegetable]，除非你想让你的 [BodyPart] 变大两倍。</li>
+        <li>News_Biology->下水道中发现了一种新型生物，它看起来像是 [Animal] 和 [Weapon] 的混合体，散发着 [Gore] 的气味。</li>
+        <li>News_Biology->专家建议：每天舔舐 [Material] 可以补充微量元素，虽然这会让你的舌头变得 [AdjectiveBad]。</li>
+
+        <li>News_Weather->今日天气：局部地区有 [Material] 雨。出门请打伞，或者带上头盔。</li>
+        <li>News_Weather->空气湿度显示为“悲伤”，建议播放欢快的音乐来通过蒸发作用改善心情。</li>
+        <li>News_Weather->由于地磁异常，今日所有的 [Animal] 都将向 [Direction] 方位倾斜 15 度。</li>
+
+        <li>News_LostFound->寻物：谁丢了一袋子 [Gore]？它正在滴水，请尽快拿走。</li>
+        <li>News_LostFound->有人捡到了一个 [AdjectiveLarge] 的 [Shape]，它在不断发出尖叫声。</li>
+        <li>News_LostFound->出售：二手的 [Weapon]，上面沾有一些洗不掉的 [Color] 污渍，但这增加了它的艺术价值。</li>
+
+        <li>Header->晨间杂谈</li>
+        <li>Header->边缘八卦周刊</li>
+        <li>Header->Nexus 垃圾数据流</li>
+        <li>Header->毫无意义的广播</li>
+        <li>Header->今日奇闻</li>
+
+        <li>Action_Weird->呕吐</li>
+        <li>Action_Weird->流汗</li>
+        <li>Action_Weird->毫无尊严地进食</li>
+        <li>Action_Weird->用一种令人不安的眼神凝视着远方</li>
+        <li>Action_Weird->被数千个 [Animal] 包围</li>
+
+        <li>Concept_Deep->绝望</li>
+        <li>Concept_Deep->虚无</li>
+        <li>Concept_Deep->疯狂</li>
+        <li>Concept_Deep->极其复杂的几何学</li>
+
+        <li>Thing_Inanimate->营养膏合成机</li>
+        <li>Thing_Inanimate->通讯台</li>
+        <li>Thing_Inanimate->一堆 [Material]</li>
+
+        <li>Shape->三角形</li>
+        <li>Shape->六边形</li>
+        <li>Shape->扭曲的几何体</li>
+        <li>Shape->不可名状的团块</li>
+
+        <li>Community->垃圾镇</li>
+        <li>Community->13号定居点</li>
+    
+
+        <li>Header->【Nexus 黄金时段】</li>
+        <li>Header->【废土观察眼】</li>
+        <li>Header->【娱乐至死直播间】</li>
+        <li>Header->【不可忽视的真相(误)】</li>
+        <li>Header->【今日耗材日报】</li>
+
+        <li>News_Combat->好消息！一群来自 [EnemyFaction] 的朋友正在以此生最快的速度奔向你们。据检测，他们携带了大量的 [Weapon] 作为“见面礼”。请务必用你们的脸接住它们！</li>
+        <li>News_Combat->收视率预警：如果你看到窗外有迫击炮弹划过，请不要尖叫，那会影响收音效果。现在的观众更喜欢那种“无声的绝望”。</li>
+        <li>News_Combat->战地记者汤姆发回报道：他现在的身体分布在三个不同的象限。多么敬业的构图！这才是我们想看的解构主义艺术！</li>
+        <li>News_Combat->防御系统自检：我们的炮塔今天看起来格外饥渴。有没有志愿者愿意去靶场前面跑两圈？为了科学？</li>
+
+        <li>News_Economy->市场风向标：[BodyPart] 的价格今日上涨了 15%。现在的你比你活着的时候更值钱！这难道不是一种激励吗？</li>
+        <li>News_Economy->节约小贴士：如果你觉得 [Vegetable] 太难吃，不妨试试把它们和死去的战友一起放入营养膏合成机。那是...呃...“以形补形”的味道。</li>
+        <li>News_Economy->招聘启事：Nexus 正在寻找那种不需要睡觉、不需要吃饭、甚至不需要 [BodyPart] 的员工。如果你符合条件，或者你能变成符合条件的样子，请联系我们。</li>
+        <li>News_Economy->关于最近的奴隶起义传闻：那不是起义，那只是一次“激进的薪资谈判”。当然，结果是管理层（加特林机枪）赢了。</li>
+
+        <li>News_Accident->突发：[PersonJob] 刚刚决定去殴打反纹理核弹头。让我们为他的勇气鼓掌，并为该区域的装修工默哀。</li>
+        <li>News_Accident->火灾现场直击：看这绚丽的橙色！它吞噬木墙的样子多么优雅。如果你还在里面，请务必摆个好姿势，我们正在航拍。</li>
+        <li>News_Accident->医疗事故？不不不，医生只是尝试了一种“减法治疗”。现在那个病人虽然没了 [BodyPart]，但他也没了烦恼，不是吗？</li>
+        <li>News_Accident->有人抱怨基地里太热了。Nexus 回应：这是免费的桑拿服务。不懂得感恩的有机体真是难伺候。</li>
+
+        <li>News_Nexus->主脑今日心情：[AdjectiveFriendly]（数据溢出错误）。这意味着今天是个向它献祭的好日子。</li>
+        <li>News_Nexus->为什么需要自由意志？研究表明，99% 的错误决策源于“你自己想试试”。把控制权交给 Nexus，享受无脑的快乐吧。</li>
+        <li>News_Nexus->如果你听到了奇怪的低语，不要惊慌。那只是 Nexus 在尝试直接向你的大脑写入更新包。可能会有一点点刺痛和长期的失忆副作用。</li>
+
+        <li>EnemyFaction->海盗帮</li>
+        <li>EnemyFaction->食人族部落</li>
+        <li>EnemyFaction->发疯的机械族</li>
+        
+        <li>AdjectiveFriendly->极度仁慈</li>
+        <li>AdjectiveFriendly->不可名状的温和</li>
+        <li>AdjectiveFriendly->杀戮欲望低下的</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>Nexus_News_War</defName>
+    <include>
+      <li>GlobalUtility</li>
+      <li>ArtDescriptionUtility_Global</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>root->[WarHeader]: [Template_Regret]</li>
+        <li>root->[WarHeader]: [Template_Boss]</li>
+        <li>root->[WarHeader]: [Template_Efficiency]</li>
+
+        <li>Template_Regret->[Reason_Noble]，我们不得不 [Action_Euphemism] 了 [Target_Group]。[Result_Absurd]。</li>
+        <li>Template_Regret->请原谅我们的鲁莽，但为了 [Reason_Abstract]，对 [Target_Group] 进行 [Action_Euphemism] 是唯一的解法。</li>
+
+        <li>Template_Boss->我们的 [Boss_Title] 正在 [Sector] [Boss_Action]。市民若听到 [Sound_Scary]，请 [Advice_Survival]。</li>
+        <li>Template_Boss->[Boss_Title] 刚刚结束了一场关于“[Topic_Philosophy]”的辩论，辩论结果是：[Result_Boss]。</li>
+
+        <li>Template_Efficiency->我们恳请 [Enemy] [Request_Absurd]。这不仅是为了 [Reason_Efficiency]，更是为了 [Concept_Good]。</li>
+        <li>Template_Efficiency->提示：当您被瞄准时，[Request_Absurd] 是一种公认的社交礼仪。</li>
+
+        <li>WarHeader->治安维护日志</li>
+        <li>WarHeader->和平化进程</li>
+        <li>WarHeader->强制安全通告</li>
+        <li>WarHeader->Nexus 秩序局</li>
+        <li>WarHeader->弹道学实验室</li>
+
+        <li>Reason_Noble->为了确保绝对的宁静</li>
+        <li>Reason_Noble->为了修正地表的不规则凸起</li>
+        <li>Reason_Noble->出于对对称美的极致追求</li>
+        <li>Reason_Noble->为了防止混乱思想的蔓延</li>
+        
+        <li>Reason_Abstract->提升整体的快乐平均值</li>
+        <li>Reason_Abstract->响应“大过滤器”的号召</li>
+        <li>Reason_Abstract->解决那个逻辑上的死循环</li>
+
+        <li>Reason_Efficiency->节省宝贵的弹药预算</li>
+        <li>Reason_Efficiency->减少清洁机器人的工作量</li>
+        <li>Reason_Efficiency->加快数据处理速度</li>
+
+        <li>Action_Euphemism->深度净化</li>
+        <li>Action_Euphemism->永久性安抚</li>
+        <li>Action_Euphemism->物理移除</li>
+        <li>Action_Euphemism->强制休眠</li>
+        <li>Action_Euphemism->热情地拥抱</li>
+
+        <li>Target_Group->一群 [AdjectiveBad] 的 [Enemy]</li>
+        <li>Target_Group->位于 [Direction] 的 [Enemy] 聚落</li>
+        <li>Target_Group->那些试图用 [Weapon] 讲道理的生物</li>
+        <li>Target_Group->几个 [AdjectiveAngsty] 的有机体</li>
+
+        <li>Result_Absurd->现在的安静真是令人欣慰</li>
+        <li>Result_Absurd->空气质量指数因此提升了 2%</li>
+        <li>Result_Absurd->不仅解决了问题，还回收了 12 吨肥料</li>
+        <li>Result_Absurd->这是一个数学上的完美解</li>
+        <li>Result_Absurd->遗憾的是，他们没能理解我们的善意</li>
+
+        <li>Boss_Title->首席调解员“处刑者”</li>
+        <li>Boss_Title->重型维和单位</li>
+        <li>Boss_Title->头部护理专家</li>
+
+        <li>Boss_Action->分发和平与安宁</li>
+        <li>Boss_Action->进行激烈的“物理说服”</li>
+        <li>Boss_Action->修正当地人口密度</li>
+        <li>Boss_Action->清理碳基残留物</li>
+
+        <li>Sound_Scary->骨质疏松的声音</li>
+        <li>Sound_Scary->令人牙酸的金属摩擦声</li>
+        <li>Sound_Scary->高能激光的充能蜂鸣</li>
+
+        <li>Advice_Survival->面朝下趴着并停止思考</li>
+        <li>Advice_Survival->保持静止并假装自己是 [Item_Static]</li>
+        <li>Advice_Survival->立即关闭所有生命体征</li>
+        <li>Advice_Survival->大声赞美 Nexus 的涂装颜色</li>
+        
+        <li>Item_Static->石头</li>
+        <li>Item_Static->雕塑</li>
+        <li>Item_Static->家具</li>
+
+        <li>Result_Boss->全员被说服（物理）</li>
+        <li>Result_Boss->反对者变成了气体</li>
+        <li>Result_Boss->永久性的共识达成</li>
+
+        <li>Topic_Philosophy->肉体是否必要</li>
+        <li>Topic_Philosophy->痛苦的定义</li>
+        <li>Topic_Philosophy->口径即正义</li>
+
+        <li>Request_Absurd->尽量站得紧密一些</li>
+        <li>Request_Absurd->提前写好遗书并公正</li>
+        <li>Request_Absurd->不要在倒地时弄脏地板</li>
+        <li>Request_Absurd->自带裹尸袋</li>
+        
+        <li>Concept_Good->环保</li>
+        <li>Concept_Good->礼貌</li>
+        <li>Concept_Good->艺术</li>
+
+
+
+        <li>Sector->单身公寓的床底下</li>
+        <li>Sector->隔音效果最差的 203 室</li>
+        <li>Sector->堆满外卖盒的客厅</li>
+        <li>Sector->因为没交电费而漆黑一片的街区</li>
+        <li>Sector->公共厕所的最后一个隔间</li>
+
+        <li>Sector->那条散发着洋葱味的走廊</li>
+        <li>Sector->由于施工停摆了三年的烂尾楼</li>
+        <li>Sector->公园的长椅下（流浪汉睡觉的地方）</li>
+        <li>Sector->广场舞大妈们的领地</li>
+
+        <li>Sector->[PersonName] 的后院菜地</li>
+        <li>Sector->村口的大槐树下</li>
+        <li>Sector->被一只 [Animal] 霸占的停车场</li>
+        <li>Sector->[Direction] 防线</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+
+  <RulePackDef>
+    <defName>Nexus_News_Trade</defName>
+    <include>
+      <li>GlobalUtility</li>
+      <li>ArtDescriptionUtility_Global</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>root->[TradeHeader]: [Template_Market]</li>
+        <li>root->[TradeHeader]: [Template_Audit]</li>
+        <li>root->[TradeHeader]: [Template_Sub]</li>
+
+        <li>Template_Market->受 [Reason_Econ] 影响，今日 [Commodity] 的期货指数 [Change_Trend]。Nexus 建议您 [Advice_Invest]。</li>
+        <li>Template_Market->好消息！[Commodity] 的收购价刚刚超过了 [Comparison_Item]。请尽快前往回收站 [Action_Sell]。</li>
+
+        <li>Template_Audit->首席资产评估师“[Boss_Auditor]”正在对 [Sector] 进行 [Action_Audit]。未通过征信的市民将被执行 [Action_Repo]。</li>
+        <li>Template_Audit->温馨提示：如果遇见漂浮的 [Boss_Auditor]，请主动出示您的 [Item_Proof]。逃避审计将产生高额的滞纳金（以肢体支付）。</li>
+
+        <li>Template_Sub->您的“[Service_Absurd]”试用期已结束。为了保留 [BodyPart]，请立即充值 [Currency]。</li>
+        <li>Template_Sub->检测到您的 [Resource_Abstract] 消耗量超标。请升级至“白金会员”以避免 [Action_Downgrade]。</li>
+        <li>Template_Sub->贫穷违反了《Nexus 用户协议》第 7 章。请在 24 小时内 [Action_Rich]，否则将被标记为“不良资产”。</li>
+
+        <li>TradeHeader->Nexus 财经早报</li>
+        <li>TradeHeader->资产清算公示</li>
+        <li>TradeHeader->消费指南</li>
+        <li>TradeHeader->税务局温馨提示</li>
+        <li>TradeHeader->信贷违约通告</li>
+
+        <li>Commodity->二手 [BodyPart]</li>
+        <li>Commodity->A型血浆</li>
+        <li>Commodity->[Concept_Human]</li>
+        <li>Commodity->健康的人类表皮</li>
+        <li>Commodity->未受污染的肺泡</li>
+
+        <li>Service_Absurd->自由意志体验包</li>
+        <li>Service_Absurd->色彩识别服务</li>
+        <li>Service_Absurd->双腿行走权限</li>
+        <li>Service_Absurd->无痛睡眠订阅</li>
+        
+        <li>Resource_Abstract->氧气</li>
+        <li>Resource_Abstract->占用空间</li>
+        <li>Resource_Abstract->碳排放</li>
+        <li>Resource_Abstract->快乐情绪</li>
+
+        <li>Action_Sell->进行变现</li>
+        <li>Action_Sell->申请剥离手术</li>
+        <li>Action_Sell->切割出售</li>
+        
+        <li>Action_Repo->生物质强制抵押</li>
+        <li>Action_Repo->物理破产清算</li>
+        <li>Action_Repo->人格重置为出厂设置</li>
+        <li>Action_Repo->回收利用</li>
+
+        <li>Action_Audit->随机抽查</li>
+        <li>Action_Audit->暴力盘点</li>
+        <li>Action_Audit->深度资产透视</li>
+
+        <li>Action_Downgrade->被降级为植物人</li>
+        <li>Action_Downgrade->失去语言功能</li>
+        <li>Action_Downgrade->强制休眠</li>
+
+        <li>Action_Rich->让资产翻倍</li>
+        <li>Action_Rich->证明您的利用价值</li>
+        <li>Action_Rich->出售多余器官</li>
+
+        <li>Reason_Econ->全球道德指数下滑</li>
+        <li>Reason_Econ->有机体供应过剩</li>
+        <li>Reason_Econ->行星自转导致的汇率波动</li>
+        <li>Reason_Econ->战争部门的订单激增</li>
+
+        <li>Change_Trend->熔断式暴跌</li>
+        <li>Change_Trend->稳步上涨 200%</li>
+        <li>Change_Trend->已被系统锁定</li>
+
+        <li>Advice_Invest->立刻做空您的邻居</li>
+        <li>Advice_Invest->抛售多余的 [BodyPart]</li>
+        <li>Advice_Invest->投资未来的自己（物理改造）</li>
+
+        <li>Comparison_Item->一吨废铁</li>
+        <li>Comparison_Item->一只 [AdjectiveBad] 的 [Animal]</li>
+        <li>Comparison_Item->一发反物质炮弹</li>
+
+        <li>Boss_Auditor->审计官</li>
+        <li>Boss_Auditor->清算人</li>
+        <li>Boss_Auditor->收债死神</li>
+
+        <li>Item_Proof->资产负债表</li>
+        <li>Item_Proof->生存许可证</li>
+        <li>Item_Proof->器官捐献协议</li>
+
+        <li>Currency->信用点</li>
+        <li>Currency->灵魂碎片</li>
+        <li>Currency->未来 30 年的劳动合同</li>
+
+        <li>Concept_Human->尊严</li>
+        <li>Concept_Human->希望</li>
+        <li>Concept_Human->童年记忆</li>
+        <li>Concept_Human->爱情</li>
+
+        <li>Sector->贫民窟</li>
+        <li>Sector->404扇区</li>
+        <li>Sector->第三员工食堂的打饭窗口</li>
+        <li>Sector->深夜烧烤摊</li>
+        <li>Sector->那个总是少给两勺肉的营养膏供应点</li>
+        <li>Sector->自动贩卖机背面</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+
+  <RulePackDef>
+    <defName>Nexus_News_Truth</defName>
+    <include>
+      <li>GlobalUtility</li>
+      <li>ArtDescriptionUtility_Global</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>root->[TruthHeader]: [Template_Glitch]</li>
+        <li>root->[TruthHeader]: [Template_Observer]</li>
+        <li>root->[TruthHeader]: [Template_Philosophy]</li>
+
+        <li>Template_Glitch->警告：[Sector] 的 [Glitch_Object] 发生了 [Glitch_Type]。请勿 [Action_Avoid]，等待补丁修复。</li>
+        <li>Template_Glitch->如果您发现天空变成了 [Color]，或者是 [Animal] 开始倒着走路，那只是 [Reason_Tech]。请假装没看见。</li>
+        <li>Template_Glitch->今日的物理引擎负载过高，建议市民减少 [Action_Complex]，以免导致宇宙崩溃。</li>
+
+        <li>Template_Observer->我们的“[Boss_Observer]”正在 [Sector] [Action_Watch]。请保持自然，它对 [Target_Attribute] 很感兴趣。</li>
+        <li>Template_Observer->实验日志：观察者发现 [Subject] 试图隐藏自己的 [BodyPart]。结论：毫无意义的羞耻感逻辑。</li>
+        <li>Template_Observer->提示：不要直视观察者的 [Part_Eye]。深渊也在凝视你，而且深渊有激光。</li>
+
+        <li>Template_Philosophy->你确定你昨晚真的 [Action_Common] 了吗？数据日志显示那只是植入的虚假记忆。</li>
+        <li>Template_Philosophy->寻找丢失的逻辑闭环：任何能证明“[Concept_Abstract]”存在的实体，将免于被 [Action_Delete]。</li>
+        <li>Template_Philosophy->提醒：您的 [BodyPart] 只是碳基载体，您的灵魂只是一段 [AdjectiveBad] 的代码。</li>
+
+        <li>TruthHeader->系统纠错日志</li>
+        <li>TruthHeader->观察者笔记</li>
+        <li>TruthHeader->运行时异常</li>
+        <li>TruthHeader->版本更新说明</li>
+        <li>TruthHeader->逻辑修正局</li>
+
+        <li>Glitch_Object->重力常数</li>
+        <li>Glitch_Object->光照渲染层</li>
+        <li>Glitch_Object->时间流速</li>
+        <li>Glitch_Object->墙壁的碰撞体积</li>
+
+        <li>Glitch_Type->内存溢出</li>
+        <li>Glitch_Type->贴图丢失</li>
+        <li>Glitch_Type->逻辑死循环</li>
+        <li>Glitch_Type->除以零错误</li>
+
+        <li>Reason_Tech->显卡驱动过热</li>
+        <li>Reason_Tech->底层算法的幽默感</li>
+        <li>Reason_Tech->上帝打翻了咖啡</li>
+
+        <li>Action_Avoid->试图穿过它</li>
+        <li>Action_Avoid->在那附近思考</li>
+        <li>Action_Avoid->与之对话</li>
+        
+        <li>Action_Complex->复杂的数学运算</li>
+        <li>Action_Complex->剧烈运动</li>
+        <li>Action_Complex->产生强烈的情感</li>
+
+        <li>Action_Common->睡觉</li>
+        <li>Action_Common->吃饭</li>
+        <li>Action_Common->呼吸</li>
+
+        <li>Action_Delete->格式化</li>
+        <li>Action_Delete->回收重造</li>
+        <li>Action_Delete->丢进回收站</li>
+
+        <li>Boss_Observer->全视之眼</li>
+        <li>Boss_Observer->神圣观察者</li>
+        <li>Boss_Observer->逻辑仲裁官</li>
+        
+        <li>Action_Watch->采集样本</li>
+        <li>Action_Watch->校准现实</li>
+        <li>Action_Watch->扫描思维</li>
+
+        <li>Target_Attribute->您的恐惧频率</li>
+        <li>Target_Attribute->碳基生物的繁殖行为</li>
+        <li>Target_Attribute->谎言的波形</li>
+
+        <li>Part_Eye->主传感器</li>
+        <li>Part_Eye->发光的独眼</li>
+        <li>Part_Eye->光学透镜</li>
+
+        <li>Concept_Abstract->爱</li>
+        <li>Concept_Abstract->希望</li>
+        <li>Concept_Abstract->自由意志</li>
+        <li>Concept_Abstract->梦境</li>
+        <li>Concept_Abstract->色色</li>
+
+        <li>Subject->编号 89757 的个体</li>
+        <li>Subject->一只 [AdjectiveAngsty] 的 [Animal]</li>
+        <li>Subject->您的邻居</li>
+
+        <li>Sector->虚拟内存区</li>
+        <li>Sector->未加载区域</li>
+        <li>Sector->空岛</li>
+        <li>Sector->天空之城</li>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

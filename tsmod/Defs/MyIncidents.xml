@@ -75,4 +75,21 @@
     <baseChance>0.8</baseChance> <minRefireDays>15</minRefireDays> </IncidentDef>
 
 
+<IncidentDef>
+    <defName>Nexus_Incident_RogueCoreDrop</defName>
+    <label>rogue core arrival</label>
+    <category>Misc</category> <baseChance>5.0</baseChance> 
+    
+    <earliestDay>2</earliestDay>
+    
+    <minRefireDays>15</minRefireDays>
+    
+    <targetTags>
+        <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>tsmod.IncidentWorker_RogueCoreArrival</workerClass>
+    <minDifficulty>1</minDifficulty>
+    <populationEffect>None</populationEffect>
+</IncidentDef>
+
 </Defs>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="TubeTelevision" or defName="FlatscreenTelevision" or defName="MegascreenTelevision"]/comps</xpath>
+    
+    <value>
+      <li Class="tsmod.CompProperties_NexusTerminal" />
+    </value>
+  </Operation>
+
+</Patch>

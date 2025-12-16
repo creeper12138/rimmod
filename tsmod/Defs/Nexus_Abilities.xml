@@ -25,7 +25,7 @@
       </li>
 
       <li Class="tsmod.CompProperties_AbilityPointCost">
-        <amount>50</amount> </li>
+        <amount>4</amount> </li>
     </comps>
   </AbilityDef>
 
@@ -53,8 +53,86 @@
       </li>
 
       <li Class="tsmod.CompProperties_AbilityPointCost">
-        <amount>20</amount> </li>
+        <amount>2</amount> </li>
     </comps>
   </AbilityDef>
+
+
+  <ThingDef ParentName="OrbitalStrikeBase">
+    <defName>Nexus_Sweeping_PowerBeam</defName>
+    <label>nexus sweeping beam</label>
+    <thingClass>tsmod.Nexus_SweepingBeam</thingClass> 
+<tickerType>Normal</tickerType> 
+<drawOffscreen>true</drawOffscreen>
+    
+    <comps>
+    <li Class="CompProperties_AffectsSky">
+      <skyColors>
+        <sky>(1.0, 0.9, 0.6)</sky>
+        <shadow>(0.8, 0.6, 0.4)</shadow>
+        <overlay>(1.0, 0.9, 0.6)</overlay>
+      </skyColors>
+    </li>
+    </comps>
+  </ThingDef>
+
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Nexus_SweepingBeamMote</defName>
+    <thingClass>tsmod.Mote_SweepingBeam</thingClass> <altitudeLayer>Weather</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <mote>
+      <solidTime>99999</solidTime> <fadeInTime>0.2</fadeInTime>
+      <fadeOutTime>0.5</fadeOutTime>
+    </mote>
+    <graphicData>
+      <texPath>Things/Mote/PowerBeam</texPath> <shaderType>MoteGlow</shaderType>
+      <drawSize>100</drawSize>
+    </graphicData>
+  </ThingDef>
+
+
+
+<ThingDef ParentName="OrbitalStrikeBase">
+    <defName>Nexus_Recycle_Beam</defName>
+    <label>industrial disassembly beam</label>
+    <thingClass>tsmod.Nexus_RecycleBeam</thingClass>
+    
+    <comps>
+      <li Class="RimWorld.CompProperties_OrbitalBeam">
+        <width>15</width>
+        <color>(1, 0.7, 0.2, 0.9)</color>
+        <sound>OrbitalBeam</sound>
+      </li>
+    </comps>
+
+    <projectile>
+      <damageDef>Smoke</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+    </projectile>
+
+    <drawOffscreen>true</drawOffscreen>
+  </ThingDef>
+
+
+<ThingDef ParentName="OrbitalStrikeBase">
+    <defName>Nexus_Truth_Beam</defName>
+    <label>entropy reduction beam</label> <thingClass>tsmod.Nexus_TruthBeam</thingClass>
+
+    <comps>
+      <li Class="RimWorld.CompProperties_OrbitalBeam">
+        <width>15</width>
+        <color>(0.2, 0.9, 1.0, 0.9)</color> 
+        <sound>OrbitalBeam</sound>
+      </li>
+    </comps>
+
+    <projectile>
+      <damageDef>Smoke</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+    </projectile>
+
+    <drawOffscreen>true</drawOffscreen>
+  </ThingDef>
 
 </Defs>

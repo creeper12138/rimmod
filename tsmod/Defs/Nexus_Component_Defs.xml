@@ -6,7 +6,23 @@
     <label>RPG 套装</label>
     <standardDef>Nexus_RPG_Standard</standardDef>
     <variantDef>Nexus_RPG_Unstable</variantDef>
-    <scanCost>80</scanCost>
+    <scanCost>1</scanCost>
   </tsmod.NexusItemPairDef>
+
+  <tsmod.NexusItemPairDef>
+    <defName>Pair_Nexus_Medicine</defName>
+    <label>Nexus 纳米医疗包</label>
+    <standardDef>Nexus_Med_Standard</standardDef> <variantDef>Nexus_Med_Trap</variantDef>         <scanCost>1</scanCost>
+  </tsmod.NexusItemPairDef>
+
+
+  <tsmod.NexusItemPairDef>
+    <defName>Pair_Nexus_RoyalBed</defName>
+    <label>Nexus 皇家床</label>
+    <standardDef>Nexus_Bed_Royal</standardDef>
+    <variantDef>Nexus_Bed_Royal_Trap</variantDef>
+    <scanCost>1</scanCost>
+  </tsmod.NexusItemPairDef>
+
 
   </Defs>
