@@ -1,5 +1,5 @@
 ---
-name: Custom issue template
+name: Upload Training Data
 about: Upload Training Data
 title: ''
 labels: data-submission 这里上传数据
